@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rottenpotatoes": {
+    "Todos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rottenpotatoes",
+            "outputPath": "dist/Todoapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,10 +30,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
-          },
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.min.js",
+            "./node_modules/jquery/dist/jquery.js"
+          ]
+          }, 
           "configurations": {
             "production": {
               "budgets": [
@@ -65,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "rottenpotatoes:build:production"
+              "browserTarget": "Todos:build:production"
             },
             "development": {
-              "browserTarget": "rottenpotatoes:build:development"
+              "browserTarget": "Todos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rottenpotatoes:build"
+            "browserTarget": "Todos:build"
           }
         },
         "test": {
